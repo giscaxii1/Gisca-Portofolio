@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Gisca Ayu Nabila</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #8B6F47 0%, #D4A574 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(139, 111, 71, 0.15);
+    }
+    
+    .skill-bar {
+      transition: width 1s ease-in-out;
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #8B6F47;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #8B6F47;
+      border: 3px solid #FFF8F0;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 20px;
+      width: 2px;
+      height: calc(100% + 10px);
+      background: #E8DCC8;
+    }
+    
+    .timeline-item:last-child::after {
+      display: none;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full font-body bg-gradient-to-br from-amber-50 via-stone-50 to-amber-100 text-stone-800 overflow-auto">
+  <div class="w-full h-full"><!-- Header / Navbar -->
+   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+     <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center overflow-hidden"><img id="header-profile-img" src="https://i.pinimg.com/736x/0f/53/23/0f5323bc315d13e5ae47e82bf25ede53.jpg" alt="Profile" class="w-full h-full object-cover" style="object-position: center 30%;" loading="lazy" onerror="this.style.display='none'; document.getElementById('header-profile-fallback').style.display='flex';"> <span id="header-profile-fallback" class="text-white font-semibold text-lg" style="display: none;">GA</span>
+       </div>
+       <div>
+        <h1 id="site-name" class="font-display text-xl font-bold text-stone-800">Gisca Ayu Nabila</h1>
+        <p id="tagline" class="text-xs text-stone-600">Ideas brought to life.</p>
+       </div>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 text-stone-700"> <i class="fas fa-bars text-xl"></i> </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-8">
+       <li><a href="#home" class="nav-link text-stone-700 hover:text-amber-800 font-medium">Home</a></li>
+       <li><a href="#about" class="nav-link text-stone-700 hover:text-amber-800 font-medium">About</a></li>
+       <li><a href="#skills" class="nav-link text-stone-700 hover:text-amber-800 font-medium">Skills</a></li>
+       <li><a href="#portofolio" class="nav-link text-stone-700 hover:text-amber-800 font-medium">Portofolio</a></li>
+       <li><a href="#contact" class="nav-link text-stone-700 hover:text-amber-800 font-medium">Contact</a></li>
+      </ul>
+     </div><!-- Mobile Menu -->
+     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-stone-200 pt-4">
+      <ul class="space-y-3">
+       <li><a href="#home" class="block text-stone-700 hover:text-amber-800 font-medium">Home</a></li>
+       <li><a href="#about" class="block text-stone-700 hover:text-amber-800 font-medium">About</a></li>
+       <li><a href="#skills" class="block text-stone-700 hover:text-amber-800 font-medium">Skills</a></li>
+       <li><a href="#portofolio" class="block text-stone-700 hover:text-amber-800 font-medium">Portofolio</a></li>
+       <li><a href="#contact" class="block text-stone-700 hover:text-amber-800 font-medium">Contact</a></li>
+      </ul>
+     </div>
+    </nav>
+   </header><!-- Hero Section -->
+   <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+    <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+     <div class="space-y-6 fade-in-up">
+      <h2 class="text-5xl md:text-7xl font-display font-bold gradient-text leading-tight"><span id="hero-title">Gisca Ayu Nabila</span></h2>
+      <h3 id="hero-role" class="text-2xl md:text-3xl font-semibold text-amber-900">"Project Enabler &amp; Spokesperson"</h3>
+      <p id="motto" class="text-xl font-medium text-amber-800 italic">"Simple yet significant."</p>
+      <p id="hero-description" class="text-lg text-stone-600 leading-relaxed">Ahli dalam perancangan ide, presentasi publik, dan manajemen administrasi kegiatan.</p>
+      <div class="flex flex-wrap gap-4"><a href="#portofolio" id="cta-button" class="px-8 py-3 bg-gradient-to-r from-amber-700 to-amber-900 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">Lihat Portofolio</a> <a href="#contact" class="px-8 py-3 border-2 border-amber-700 text-amber-900 font-semibold rounded-full hover:bg-amber-50 transition-all duration-300">Hubungi Saya</a>
+      </div>
+     </div>
+     <div class="flex justify-center">
+      <div class="relative">
+       <div class="w-80 h-80 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 absolute -z-10 blur-3xl opacity-50"></div>
+       <div class="w-80 h-80 rounded-full border-4 border-amber-700 overflow-hidden bg-white shadow-2xl"><img id="hero-profile-img" src="https://i.pinimg.com/736x/0f/53/23/0f5323bc315d13e5ae47e82bf25ede53.jpg" alt="Gisca Ayu Nabila" class="w-full h-full object-cover" style="object-position: center 20%;" loading="lazy" onerror="this.style.display='none'; document.getElementById('hero-profile-fallback').style.display='flex';">
+        <div id="hero-profile-fallback" class="w-full h-full flex items-center justify-center bg-gradient-to-br from-amber-700 to-amber-900" style="display: none;"><span class="text-white text-8xl font-bold">GA</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-4 gradient-text">Tentang Saya</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-amber-700 to-amber-900 mx-auto mb-12"></div>
+     <div class="grid md:grid-cols-2 gap-12">
+      <div class="space-y-6">
+       <div class="bg-gradient-to-br from-amber-50 to-stone-50 p-6 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-900 mb-4 flex items-center"><i class="fas fa-user-circle mr-3"></i> Profil Singkat</h3>
+        <div class="space-y-2 text-stone-700">
+         <p><span class="font-semibold">Nama:</span> Gisca Ayu Nabila</p>
+         <p><span class="font-semibold">Lahir:</span> Subang, 9 Agustus 2008</p>
+         <p><span class="font-semibold">Jenis Kelamin:</span> Perempuan</p>
+         <p><span class="font-semibold">Alamat:</span> Jl. Sukamelang, Kel. Sukamelang, RT.21/RW.04, Kec. Subang, Kab. Subang, Prov. Jawa Barat</p>
+         <p><span class="font-semibold">Hobi:</span> Membaca, Olahraga, Mendengarkan Musik</p>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-stone-50 p-6 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-900 mb-4 flex items-center"><i class="fas fa-heart mr-3"></i> Minat &amp; Tujuan</h3>
+        <p class="text-stone-700 leading-relaxed">Peminat dunia kesehatan yang fokus mengejar cita-cita menjadi dokter. Berkomitmen untuk terus bertumbuh dan mempersiapkan diri menjadi tenaga medis yang kompeten dan berintegritas.</p>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-stone-50 p-6 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-900 mb-4 flex items-center"><i class="fas fa-star mr-3"></i> Keunggulan Pribadi</h3>
+        <div class="flex flex-wrap gap-2"><span class="px-4 py-2 bg-white text-amber-900 rounded-full text-sm font-medium border border-amber-200">Mudah Beradaptasi</span> <span class="px-4 py-2 bg-white text-amber-900 rounded-full text-sm font-medium border border-amber-200">Kerjasama Tim</span> <span class="px-4 py-2 bg-white text-amber-900 rounded-full text-sm font-medium border border-amber-200">Public Speaking</span>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-6">
+       <div class="bg-gradient-to-br from-amber-50 to-stone-50 p-6 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-900 mb-4 flex items-center"><i class="fas fa-graduation-cap mr-3"></i> Pendidikan</h3>
+        <div class="space-y-4">
+         <div class="timeline-item">
+          <p class="font-semibold text-stone-800">SMAN 1 Subang</p>
+          <p class="text-sm text-stone-600">2023 - 2026</p>
+         </div>
+         <div class="timeline-item">
+          <p class="font-semibold text-stone-800">SMPN 1 Subang</p>
+          <p class="text-sm text-stone-600">2020 - 2023</p>
+         </div>
+         <div class="timeline-item">
+          <p class="font-semibold text-stone-800">SD IT Bhaskara</p>
+          <p class="text-sm text-stone-600">2014 - 2020</p>
+         </div>
+         <div class="timeline-item">
+          <p class="font-semibold text-stone-800">SD Yosudarso</p>
+          <p class="text-sm text-stone-600">2013 - 2014</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-stone-50 p-6 rounded-2xl shadow-md">
+        <h3 class="text-2xl font-semibold text-amber-900 mb-4 flex items-center"><i class="fas fa-briefcase mr-3"></i> Pengalaman</h3>
+        <div class="space-y-3 text-sm">
+         <div>
+          <p class="font-semibold text-amber-800">Kepengurusan:</p>
+          <ul class="list-disc list-inside text-stone-700 ml-2 space-y-1">
+           <li>Pengurus Ekstrakurikuler Paskibra SMAN 1 Subang 2024/2025</li>
+           <li>Sie. Absensi Kelas XI 2024/2025</li>
+          </ul>
+         </div>
+         <div>
+          <p class="font-semibold text-amber-800">Kepanitiaan:</p>
+          <ul class="list-disc list-inside text-stone-700 ml-2 space-y-1">
+           <li>Sekretaris Acara Seleksi Calon-calon Paskibraka Tingkat Sekolah 2024/2025</li>
+           <li>Sekretaris Acara Diklat Anggota Paskibra SMAN 1 Subang 2024/2025</li>
+           <li>Sie. Kebersihan Acara Buka Bersama Paskibra SMAN 1 Subang 2023/2024</li>
+           <li>Sie. Konsumsi Karang Taruna 2023/2024</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-4 gradient-text">Keahlian</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-amber-700 to-amber-900 mx-auto mb-12"></div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-lg">
+       <h3 class="text-2xl font-semibold text-amber-900 mb-6 flex items-center"><i class="fas fa-laptop-code mr-3"></i> Hard Skills</h3>
+       <div class="space-y-5">
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Canva</span> <span class="text-amber-800 font-semibold">90%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 90%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Desain Grafis</span> <span class="text-amber-800 font-semibold">85%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 85%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Excel</span> <span class="text-amber-800 font-semibold">80%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 80%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Word</span> <span class="text-amber-800 font-semibold">85%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 85%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">HTML</span> <span class="text-amber-800 font-semibold">75%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 75%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg">
+       <h3 class="text-2xl font-semibold text-amber-900 mb-6 flex items-center"><i class="fas fa-lightbulb mr-3"></i> Soft Skills</h3>
+       <div class="space-y-5">
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Public Speaking</span> <span class="text-amber-800 font-semibold">90%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 90%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Kerja Tim</span> <span class="text-amber-800 font-semibold">95%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 95%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Komunikasi</span> <span class="text-amber-800 font-semibold">90%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 90%"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="font-medium text-stone-700">Presentasi</span> <span class="text-amber-800 font-semibold">88%</span>
+         </div>
+         <div class="w-full bg-stone-200 rounded-full h-3">
+          <div class="skill-bar bg-gradient-to-r from-amber-700 to-amber-900 h-3 rounded-full" style="width: 88%"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Portofolio Section -->
+   <section id="portofolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-4 gradient-text">Portofolio</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-amber-700 to-amber-900 mx-auto mb-12"></div><!-- Search Bar -->
+     <div class="max-w-2xl mx-auto mb-12">
+      <div class="relative"><input type="text" id="portofolio-search" placeholder="Cari karya..." class="w-full px-6 py-4 rounded-full border-2 border-amber-200 focus:border-amber-700 focus:outline-none text-stone-700 bg-amber-50"> <i class="fas fa-search absolute right-6 top-1/2 transform -translate-y-1/2 text-amber-700"></i>
+      </div>
+     </div>
+     <div id="portofolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Portofolio Item 1 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(1)">
+       <div class="h-64 bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center overflow-hidden"><img id="portfolio-img-1" src="https://i.pinimg.com/736x/4e/b5/34/4eb534d0f62f8d7a0226665a6946cb43.jpg" alt="Desain Voucher" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-1').style.display='flex';">
+        <div id="portfolio-fallback-1" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-ticket-alt text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Desain Voucher</h3>
+        <p class="text-stone-600">Perancangan media apresiasi pelanggan dalam bentuk kupon fisik maupun digital.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div><!-- Portofolio Item 2 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(2)">
+       <div class="h-64 bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center overflow-hidden"><img id="portfolio-img-2" src="https://i.pinimg.com/474x/a2/be/53/a2be532dbe0b6939b1ba647193bdf1e8.jpg" alt="Infografis Linggar Jati" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-2').style.display='flex';">
+        <div id="portfolio-fallback-2" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-chart-bar text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Infografis Linggar Jati</h3>
+        <p class="text-stone-600">Desain ini bertujuan mempermudah pembaca memahami poin diplomasi Indonesia secara cepat dan menarik.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div><!-- Portofolio Item 3 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(3)">
+       <div class="h-64 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center overflow-hidden"><img id="portfolio-img-3" src="https://i.pinimg.com/736x/06/61/d5/0661d50da315c07c239984f7ceb8ccac.jpg" alt="Infografis Puputan Margarana" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-3').style.display='flex';">
+        <div id="portfolio-fallback-3" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-history text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Infografis Puputan Margarana</h3>
+        <p class="text-stone-600">Visualisasi kronologi perjuangan rakyat Bali dalam mempertahankan kemerdekaan.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div><!-- Portofolio Item 4 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(4)">
+       <div class="h-64 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center overflow-hidden"><img id="portfolio-img-4" src="https://i.pinimg.com/474x/dd/fb/dc/ddfbdc5a3465da4e108e6541624e5df5.jpg" alt="Desain Promosi" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-4').style.display='flex';">
+        <div id="portfolio-fallback-4" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-bullhorn text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Desain Promosi</h3>
+        <p class="text-stone-600">Pengembangan materi visual untuk pemasaran menu kuliner yang menonjolkan kelezatan produk.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div><!-- Portofolio Item 5 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(5)">
+       <div class="h-64 bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center overflow-hidden"><img id="portfolio-img-5" src="https://i.pinimg.com/736x/0b/3c/a4/0b3ca4bf34ddaae5309bac8ef4e2666d.jpg" alt="Desain Banner" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-5').style.display='flex';">
+        <div id="portfolio-fallback-5" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-image text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Desain Banner</h3>
+        <p class="text-stone-600">Perancangan media informasi visual dalam format besar untuk kebutuhan promosi stand.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div><!-- Portofolio Item 6 -->
+      <div class="portofolio-item bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer" onclick="openPortfolioModal(6)">
+       <div class="h-64 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center overflow-hidden"><img id="portfolio-img-6" src="https://i.pinimg.com/736x/54/8a/e2/548ae250d43cf17424514ae900fac5a6.jpg" alt="Infografis Pancasila" class="w-full h-full object-cover" style="object-position: center 20%;" loading="lazy" onerror="this.style.display='none'; document.getElementById('portfolio-fallback-6').style.display='flex';">
+        <div id="portfolio-fallback-6" class="w-full h-full flex items-center justify-center" style="display: none;"><i class="fas fa-flag text-white text-6xl"></i>
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-amber-900 mb-2">Infografis Pancasila</h3>
+        <p class="text-stone-600">Sebuah manifestasi visual tentang persatuan Indonesia, menggambarkan bagaimana nilai-nilai Pancasila menjadi kekuatan utama bangsa.</p>
+        <div class="mt-4 flex items-center text-amber-700 font-medium"><span>Lihat Detail</span> <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="no-results" class="hidden text-center py-12"><i class="fas fa-search text-6xl text-stone-300 mb-4"></i>
+      <p class="text-xl text-stone-500">Tidak ada karya yang ditemukan</p>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-4xl md:text-5xl font-display font-bold text-center mb-4 gradient-text">Hubungi Saya</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-amber-700 to-amber-900 mx-auto mb-12"></div>
+     <div class="grid md:grid-cols-2 gap-12">
+      <div class="space-y-6">
+       <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center space-x-4 hover:shadow-xl transition-shadow">
+        <div class="w-14 h-14 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-white text-xl"></i>
+        </div>
+        <div>
+         <p class="text-sm text-stone-600 font-medium">Email</p><a href="mailto:giiscaan@gmail.com" class="text-amber-900 font-semibold hover:text-amber-700">giiscaan@gmail.com</a>
+        </div>
+       </div>
+       <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center space-x-4 hover:shadow-xl transition-shadow">
+        <div class="w-14 h-14 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center flex-shrink-0"><i class="fab fa-whatsapp text-white text-xl"></i>
+        </div>
+        <div>
+         <p class="text-sm text-stone-600 font-medium">WhatsApp</p><a href="https://wa.me/6282121134533" target="_blank" rel="noopener noreferrer" class="text-amber-900 font-semibold hover:text-amber-700">0821-2113-4533</a>
+        </div>
+       </div>
+       <div class="bg-white p-6 rounded-2xl shadow-lg">
+        <p class="text-stone-600 mb-4 font-medium">Media Sosial</p>
+        <div class="flex gap-4"><a href="https://www.instagram.com/giiscca/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform"> <i class="fab fa-instagram text-white text-xl"></i> </a> <a href="https://www.tiktok.com/@giscaan" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-br from-black to-gray-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform"> <i class="fab fa-tiktok text-white text-xl"></i> </a> <a href="https://github.com/giscaxii1" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-full flex items-center justify-center hover:scale-110 transition-transform"> <i class="fab fa-github text-white text-xl"></i> </a>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg">
+       <h3 class="text-2xl font-semibold text-amber-900 mb-6">Kirim Pesan</h3>
+       <form id="contact-form" class="space-y-4">
+        <div><label for="name" class="block text-sm font-medium text-stone-700 mb-2">Nama</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-700 focus:outline-none bg-amber-50">
+        </div>
+        <div><label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-700 focus:outline-none bg-amber-50">
+        </div>
+        <div><label for="message" class="block text-sm font-medium text-stone-700 mb-2">Pesan</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-700 focus:outline-none bg-amber-50"></textarea>
+        </div><button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-900 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105"> Kirim Pesan </button>
+       </form>
+       <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Portfolio Modal -->
+   <div id="portfolio-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onclick="closePortfolioModal()">
+    <div class="relative max-w-6xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()"><!-- Close Button --> <button onclick="closePortfolioModal()" class="absolute top-4 right-4 z-10 w-12 h-12 bg-amber-900 hover:bg-amber-800 rounded-full flex items-center justify-center transition-colors"> <i class="fas fa-times text-white text-xl"></i> </button> <!-- Navigation Buttons --> <button onclick="previousPortfolio()" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-amber-900/90 hover:bg-amber-800 rounded-full flex items-center justify-center transition-colors"> <i class="fas fa-chevron-left text-white text-xl"></i> </button> <button onclick="nextPortfolio()" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-amber-900/90 hover:bg-amber-800 rounded-full flex items-center justify-center transition-colors"> <i class="fas fa-chevron-right text-white text-xl"></i> </button>
+     <div class="grid md:grid-cols-2"><!-- Image Section -->
+      <div class="bg-gradient-to-br from-amber-100 to-stone-100 flex items-center justify-center p-8 min-h-[400px]"><img id="modal-image" src="" alt="Portfolio Image" class="max-w-full max-h-[600px] object-contain rounded-lg shadow-lg" loading="lazy">
+      </div><!-- Details Section -->
+      <div class="p-8 flex flex-col justify-center">
+       <div class="mb-6"><span id="modal-number" class="inline-block px-4 py-2 bg-amber-100 text-amber-900 rounded-full text-sm font-semibold mb-4">Karya #1</span>
+        <h3 id="modal-title" class="text-3xl font-display font-bold text-amber-900 mb-4">Desain Voucher</h3>
+        <p id="modal-description" class="text-stone-700 leading-relaxed text-lg">Perancangan media apresiasi pelanggan dalam bentuk kupon fisik maupun digital.</p>
+       </div>
+       <div class="space-y-3 border-t border-amber-200 pt-6">
+        <div class="flex items-center text-stone-600"><i class="fas fa-palette text-amber-700 mr-3 w-5"></i> <span>Desain Grafis</span>
+        </div>
+        <div class="flex items-center text-stone-600"><i class="fas fa-tools text-amber-700 mr-3 w-5"></i> <span>Canva</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Footer -->
+   <footer class="bg-gradient-to-br from-amber-900 to-amber-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+       <h3 class="text-2xl font-display font-bold mb-4">Gisca Ayu Nabila</h3>
+       <p class="text-amber-100">"Project Enabler &amp; Spokesperson"</p>
+      </div>
+      <div>
+       <h4 class="text-lg font-semibold mb-4">Navigasi Cepat</h4>
+       <ul class="space-y-2">
+        <li><a href="#home" class="text-amber-100 hover:text-white transition-colors">Home</a></li>
+        <li><a href="#about" class="text-amber-100 hover:text-white transition-colors">About</a></li>
+        <li><a href="#skills" class="text-amber-100 hover:text-white transition-colors">Skills</a></li>
+        <li><a href="#portofolio" class="text-amber-100 hover:text-white transition-colors">Portofolio</a></li>
+        <li><a href="#contact" class="text-amber-100 hover:text-white transition-colors">Contact</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-lg font-semibold mb-4">Koneksi</h4>
+       <div class="flex gap-4 mb-4"><a href="https://www.instagram.com/giiscca/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"> <i class="fab fa-instagram"></i> </a> <a href="https://www.tiktok.com/@giscaan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"> <i class="fab fa-tiktok"></i> </a> <a href="https://github.com/giscaxii1" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"> <i class="fab fa-github"></i> </a>
+       </div>
+       <p class="text-amber-100 text-sm">giiscaan@gmail.com</p>
+      </div>
+     </div>
+     <div class="border-t border-amber-800 pt-8 text-center">
+      <p id="copyright-text" class="text-amber-100">© Gisca Ayu Nabila - 2026</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default Configuration
+    const defaultConfig = {
+      site_name: "Gisca Ayu Nabila",
+      tagline: "Ideas brought to life.",
+      profile_image_url: "https://i.pinimg.com/736x/0f/53/23/0f5323bc315d13e5ae47e82bf25ede53.jpg",
+      hero_title: "Gisca Ayu Nabila",
+      hero_role: "\"Project Enabler & Spokesperson\"",
+      motto: "Simple yet significant.",
+      hero_description: "Ahli dalam perancangan ide, presentasi publik, dan manajemen administrasi kegiatan.",
+      cta_button: "Lihat Portofolio",
+      portfolio_img_1: "https://i.pinimg.com/736x/4e/b5/34/4eb534d0f62f8d7a0226665a6946cb43.jpg",
+      portfolio_img_2: "https://i.pinimg.com/474x/a2/be/53/a2be532dbe0b6939b1ba647193bdf1e8.jpg",
+      portfolio_img_3: "https://i.pinimg.com/736x/06/61/d5/0661d50da315c07c239984f7ceb8ccac.jpg",
+      portfolio_img_4: "https://i.pinimg.com/474x/dd/fb/dc/ddfbdc5a3465da4e108e6541624e5df5.jpg",
+      portfolio_img_5: "https://i.pinimg.com/736x/0b/3c/a4/0b3ca4bf34ddaae5309bac8ef4e2666d.jpg",
+      portfolio_img_6: "https://i.pinimg.com/736x/54/8a/e2/548ae250d43cf17424514ae900fac5a6.jpg",
+      copyright_text: "© Gisca Ayu Nabila",
+      background_color: "#FFF8F0",
+      surface_color: "#FFFFFF",
+      text_color: "#57534E",
+      primary_action_color: "#78350F",
+      accent_color: "#D4A574",
+      font_family: "Poppins",
+      font_size: 16
+    };
+
+    // On Config Change Handler
+    async function onConfigChange(config) {
+      const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      // Apply font family to primary text elements
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      // Apply font sizing proportionally
+      document.documentElement.style.fontSize = `${baseSize}px`;
+      
+      // Apply colors
+      document.body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.surface_color || defaultConfig.surface_color} 50%, ${config.background_color || defaultConfig.background_color} 100%)`;
+      document.body.style.color = config.text_color || defaultConfig.text_color;
+      
+      // Update text content
+      document.getElementById('site-name').textContent = config.site_name || defaultConfig.site_name;
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-role').textContent = config.hero_role || defaultConfig.hero_role;
+      document.getElementById('motto').textContent = `"${config.motto || defaultConfig.motto}"`;
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('cta-button').textContent = config.cta_button || defaultConfig.cta_button;
+      
+      const currentYear = new Date().getFullYear();
+      document.getElementById('copyright-text').textContent = `${config.copyright_text || defaultConfig.copyright_text} - ${currentYear}`;
+      
+      // Update profile images
+      const profileUrl = config.profile_image_url || defaultConfig.profile_image_url;
+      const heroImg = document.getElementById('hero-profile-img');
+      const headerImg = document.getElementById('header-profile-img');
+      const heroFallback = document.getElementById('hero-profile-fallback');
+      const headerFallback = document.getElementById('header-profile-fallback');
+      
+      if (profileUrl && profileUrl.trim() !== '') {
+        heroImg.src = profileUrl;
+        headerImg.src = profileUrl;
+        heroImg.style.display = 'block';
+        headerImg.style.display = 'block';
+        heroFallback.style.display = 'none';
+        headerFallback.style.display = 'none';
+      } else {
+        heroImg.style.display = 'none';
+        headerImg.style.display = 'none';
+        heroFallback.style.display = 'flex';
+        headerFallback.style.display = 'flex';
+      }
+      
+      // Update portofolio images
+      for (let i = 1; i <= 6; i++) {
+        const imgUrl = config[`portfolio_img_${i}`] || defaultConfig[`portfolio_img_${i}`];
+        const imgElement = document.getElementById(`portfolio-img-${i}`);
+        const fallbackElement = document.getElementById(`portfolio-fallback-${i}`);
+        
+        if (imgUrl && imgUrl.trim() !== '') {
+          imgElement.src = imgUrl;
+          imgElement.style.display = 'block';
+          fallbackElement.style.display = 'none';
+        } else {
+          imgElement.style.display = 'none';
+          fallbackElement.style.display = 'flex';
+        }
+      }
+    }
+
+    // Map to Capabilities
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    // Map to Edit Panel Values
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["site_name", config.site_name || defaultConfig.site_name],
+        ["tagline", config.tagline || defaultConfig.tagline],
+        ["profile_image_url", config.profile_image_url || defaultConfig.profile_image_url],
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_role", config.hero_role || defaultConfig.hero_role],
+        ["motto", config.motto || defaultConfig.motto],
+        ["hero_description", config.hero_description || defaultConfig.hero_description],
+        ["cta_button", config.cta_button || defaultConfig.cta_button],
+        ["portfolio_img_1", config.portfolio_img_1 || defaultConfig.portfolio_img_1],
+        ["portfolio_img_2", config.portfolio_img_2 || defaultConfig.portfolio_img_2],
+        ["portfolio_img_3", config.portfolio_img_3 || defaultConfig.portfolio_img_3],
+        ["portfolio_img_4", config.portfolio_img_4 || defaultConfig.portfolio_img_4],
+        ["portfolio_img_5", config.portfolio_img_5 || defaultConfig.portfolio_img_5],
+        ["portfolio_img_6", config.portfolio_img_6 || defaultConfig.portfolio_img_6],
+        ["copyright_text", config.copyright_text || defaultConfig.copyright_text]
+      ]);
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: mapToCapabilities,
+        mapToEditPanelValues: mapToEditPanelValues
+      });
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Portofolio Search
+    const searchInput = document.getElementById('portofolio-search');
+    const portofolioItems = document.querySelectorAll('.portofolio-item');
+    const noResults = document.getElementById('no-results');
+    
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      let visibleCount = 0;
+      
+      portofolioItems.forEach(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const description = item.querySelector('p').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    });
+
+    // Contact Form
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Show success message
+      formMessage.textContent = `Terima kasih ${name}! Pesan Anda telah diterima. Saya akan menghubungi Anda segera.`;
+      formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+      formMessage.classList.remove('hidden');
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Active Navigation Link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Portfolio Modal Functionality
+    let currentPortfolioIndex = 1;
+    
+    const portfolioData = [
+      {
+        title: "Desain Voucher",
+        description: "Perancangan media apresiasi pelanggan dalam bentuk kupon fisik maupun digital.",
+        image: ""
+      },
+      {
+        title: "Infografis Linggar Jati",
+        description: "Desain ini bertujuan mempermudah pembaca memahami poin diplomasi Indonesia secara cepat dan menarik.",
+        image: ""
+      },
+      {
+        title: "Infografis Puputan Margarana",
+        description: "Visualisasi kronologi perjuangan rakyat Bali dalam mempertahankan kemerdekaan.",
+        image: ""
+      },
+      {
+        title: "Desain Promosi",
+        description: "Pengembangan materi visual untuk pemasaran menu kuliner yang menonjolkan kelezatan produk.",
+        image: ""
+      },
+      {
+        title: "Desain Banner",
+        description: "Perancangan media informasi visual dalam format besar untuk kebutuhan promosi stand.",
+        image: ""
+      },
+      {
+        title: "Infografis Pancasila",
+        description: "Sebuah manifestasi visual tentang persatuan Indonesia, menggambarkan bagaimana nilai-nilai Pancasila menjadi kekuatan utama bangsa.",
+        image: ""
+      }
+    ];
+
+    function updatePortfolioData() {
+      const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+      for (let i = 0; i < portfolioData.length; i++) {
+        portfolioData[i].image = config[`portfolio_img_${i + 1}`] || defaultConfig[`portfolio_img_${i + 1}`];
+      }
+    }
+
+    function openPortfolioModal(index) {
+      updatePortfolioData();
+      currentPortfolioIndex = index;
+      const portfolio = portfolioData[index - 1];
+      
+      document.getElementById('modal-number').textContent = `Karya #${index}`;
+      document.getElementById('modal-title').textContent = portfolio.title;
+      document.getElementById('modal-description').textContent = portfolio.description;
+      document.getElementById('modal-image').src = portfolio.image;
+      
+      document.getElementById('portfolio-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePortfolioModal() {
+      document.getElementById('portfolio-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function nextPortfolio() {
+      currentPortfolioIndex = currentPortfolioIndex >= portfolioData.length ? 1 : currentPortfolioIndex + 1;
+      openPortfolioModal(currentPortfolioIndex);
+    }
+
+    function previousPortfolio() {
+      currentPortfolioIndex = currentPortfolioIndex <= 1 ? portfolioData.length : currentPortfolioIndex - 1;
+      openPortfolioModal(currentPortfolioIndex);
+    }
+
+    // Keyboard navigation for modal
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('portfolio-modal');
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') {
+          closePortfolioModal();
+        } else if (e.key === 'ArrowRight') {
+          nextPortfolio();
+        } else if (e.key === 'ArrowLeft') {
+          previousPortfolio();
+        }
+      }
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c81c02d624fccfd',t:'MTc3MDExOTg0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
